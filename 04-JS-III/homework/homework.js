@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { saludo } = require("../../03-JS-II/homework/homework");
+
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
@@ -60,13 +62,23 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+frases=[
+  {primero: "Hello", segundo:"world!"}
+];
+frases.map(function(frases){
+  return (frases.primero+" "+frases.segundo);
+  });
 }
+
 
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+
+
+
 }
 
 
