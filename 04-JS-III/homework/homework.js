@@ -1,5 +1,6 @@
 // No cambies los nombres de las funciones.
 
+const { suma } = require("../../02-JS-I/homework/homework");
 const { saludo } = require("../../03-JS-II/homework/homework");
 
 function devolverPrimerElemento(array) {
@@ -28,8 +29,11 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  for (var i = 0; i< array.leght; i++)
-    return array++;
+  var nuevoArray = [];
+  for(var i = 0; i < array.length; i++) {
+    nuevoArray[i] = array[i] + 1;
+  }
+  return nuevoArray;
   
   
 }
@@ -56,28 +60,26 @@ function agregarItemAlComienzoDelArray(array, elemento) {
 }
 
 
-function dePalabrasAFrase(palabras) {
+
   // "palabras" es un array de strings/cadenas
   // Devuelve un string donde todas las palabras estén concatenadas
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-frases=[
-  {primero: "Hello", segundo:"world!"}
-];
-frases.map(function(frases){
-  return (frases.primero+" "+frases.segundo);
-  });
+function dePalabrasAFrase(palabras) {
+ return palabras.join(' ');
 }
-
-
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-
-
+for (var i = 0; i < array.length; i++) {
+  if (array[i] === elemento) {
+    return true;
+  }
+  }
+return false;
 
 }
 
@@ -86,20 +88,33 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+var suma = 0
+  for(i = 0; i < numeros.length; i++) {
+ suma = suma + numeros [i];
 }
-
+return suma;
+}
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-}
+return agregarNumeros(resultadosTest) /resultadosTest.length;
+ }
 
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+
+  var maximo = numeros[0];
+ for(var i = 0; i < numeros.length; i++) {
+   if (numeros[i] > maximo) {
+     maximo = numeros[i];
+   }
+ }
+ return maximo;
 }
 
 
@@ -107,22 +122,43 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  if (arguments.length === 1) return argument [0];
+  if (arguments.length === 0) return 0;
+    var total = 1; 
+for (var i = 0; i < arguments.length; i++) {
+   total = total * arguments[i]
+  }
+   return total
+ 
+ 
 }
-
+ 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
 
+let capacidad = 0
+for(let i = 0; i < arreglo.length; i++) {
+ if (capacidad[i] > 18){
+  capacidad= capacidad + 1;
+   } 
+  }
+return capacidad
 }
-
-
 function diaDeLaSemana(numeroDeDia) {
+  // Comprueba si el elemento existe dentro de "array"
+  // Devuelve "true" si está, o "false" si no está
+  
+  
   //Suponga que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente. 
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
+  numero={
+    
+
+  }
 } 
 
 
@@ -147,7 +183,21 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-}
+  var eneromarzonoviembre = []
+  for (i = 0; i < array.length; i++){
+    if (array[i] ==="Enero" || array[i] === "Marzo" || array[i] === "Noviembre"){
+    eneromarzonoviembre.push(array[i]);
+    }
+  }
+  if(eneromarzonoviembre.length < 3){
+    return "No se encontraron los meses pedidos";
+  
+  }else{
+    return eneromarzonoviembre;
+  }
+  }
+
+
 
 
 function mayorACien(array) {
